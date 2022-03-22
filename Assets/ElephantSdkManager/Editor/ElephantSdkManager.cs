@@ -605,7 +605,7 @@ namespace ElephantSdkManager
             {
                 if (Directory.Exists(AssetsPathPrefix + sdkInfo.sdkName))
                 {
-                    if (!string.Equals(sdkInfo.sdkName, "MoPub"))
+                    if (!string.Equals(sdkInfo.sdkName, "IronSource"))
                     {
                         FileUtil.DeleteFileOrDirectory(AssetsPathPrefix + sdkInfo.sdkName);
                     }

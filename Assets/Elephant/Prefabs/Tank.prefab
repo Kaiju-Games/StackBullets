@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 938432792261538059}
   - component: {fileID: 6152071582386662755}
   - component: {fileID: 3155835917855970921}
-  - component: {fileID: 8491279345387671611}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -76,21 +75,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7816962, y: 1.7106053, z: 2.2286491}
-  m_Center: {x: -0.0073745847, y: 0.86045533, z: -0.11971092}
---- !u!65 &8491279345387671611
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8439518427342957847}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.8912025, z: 0.93128395}
-  m_Center: {x: 1.2673803e-13, y: 0.44377896, z: -2.54815}
+  m_Size: {x: 1.7816962, y: 1.7106053, z: 4.0000668}
+  m_Center: {x: -0.0073745847, y: 0.86045533, z: -1.0054197}
 --- !u!1001 &3034493695078838347
 PrefabInstance:
   m_ObjectHideFlags: 0

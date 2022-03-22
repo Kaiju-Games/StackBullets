@@ -37,7 +37,7 @@ namespace HCB.UI
             while (true)
             {
                 float timePassed = Mathf.Abs(startTime - Time.time);
-                CounterText.text = "Play Time: " + timePassed.ToString("f0");
+                //CounterText.text = "Play Time: " + timePassed.ToString("f0");
                 yield return null;
             }
         }

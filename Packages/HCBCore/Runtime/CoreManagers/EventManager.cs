@@ -14,6 +14,8 @@ namespace HCB.Core
 
         public static UnityEvent OnBulletTake = new UnityEvent();
 
+        public static UnityEvent OnBulletTakeExit = new UnityEvent();
+
         #region Editor
         public static UnityEvent OnLevelDataChange = new UnityEvent();
         #endregion

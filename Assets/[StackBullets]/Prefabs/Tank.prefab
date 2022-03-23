@@ -48,6 +48,7 @@ MonoBehaviour:
   clampData: {fileID: 0}
   EnableBodyRotation: 1
   RotateBody: {fileID: 0}
+  RotateWheels: {fileID: 0}
   Use:
     Filter: 0
     IgnoreStartedOverGui: 0
@@ -69,8 +70,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7816962, y: 1.7106053, z: 4.0000668}
-  m_Center: {x: -0.0073745847, y: 0.86045533, z: -1.0054197}
+  m_Size: {x: 1.7816962, y: 0.8410286, z: 0.7830143}
+  m_Center: {x: -0.0073745847, y: 0.425667, z: -2.613946}
 --- !u!1 &8727949780792441734
 GameObject:
   m_ObjectHideFlags: 0

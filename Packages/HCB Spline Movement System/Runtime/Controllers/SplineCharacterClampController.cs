@@ -17,6 +17,7 @@ namespace HCB.SplineMovementSystem
 
             base.Update();
             Rotate();
+            
         }
 
         protected override void Delta(Vector3 screenDelta)
@@ -38,6 +39,12 @@ namespace HCB.SplineMovementSystem
             RotateBody.localRotation = Quaternion.Slerp(RotateBody.localRotation, Quaternion.Euler(_targetRotation), Time.deltaTime * RotateSpeed);
             _targetRotation.y = Mathf.Lerp(_targetRotation.y, 0f, Time.deltaTime * RecoverySpeed);
         }
+
+
+       
+
+
+
 #if UNITY_EDITOR
         protected override void Reset()
         {

@@ -117,6 +117,7 @@ namespace HCB.Core
                 return;
             IsLevelStarted = true;
             OnLevelStart.Invoke();
+            
         }
 
         public void FinishLevel()

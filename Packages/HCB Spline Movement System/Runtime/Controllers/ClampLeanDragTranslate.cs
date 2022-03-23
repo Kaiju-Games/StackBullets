@@ -17,6 +17,8 @@ namespace HCB.SplineMovementSystem
 		[ShowIf("EnableBodyRotation")]
 		[Tooltip("The Body that rotates when we move horizontal.")]
 		public Transform RotateBody;
+
+		public Transform RotateWheels;
 		
 
 		#region Clamp Properties

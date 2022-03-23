@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace CMF
 {
 	//This simple script continually rotates the gameobject it is attached to around a chosen axis;
 	//It is used in the 'ExternalCameraScene' to demonstrate a camera setup where camera and character are separate gameobjects;
     public class RotateObject : MonoBehaviour
     {
+
+
 		Transform tr;
 		//Speed of rotation;
 		public float rotationSpeed = 20f;

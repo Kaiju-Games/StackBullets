@@ -12,6 +12,8 @@ namespace HCB.Core
 
     public class LevelManager : Singleton<LevelManager>
     {
+        public bool _isRotating;
+
         [BoxGroup("Level Data")]
         [SerializeField]
         [InlineEditor]
@@ -116,7 +118,10 @@ namespace HCB.Core
             if (IsLevelStarted)
                 return;
             IsLevelStarted = true;
+
+            
             OnLevelStart.Invoke();
+            
             
         }
 
@@ -126,6 +131,7 @@ namespace HCB.Core
             //    return;
             IsLevelStarted = false;
             OnLevelFinish.Invoke();
+            
         }
     }
 }

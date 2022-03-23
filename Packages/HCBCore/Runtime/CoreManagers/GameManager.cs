@@ -53,6 +53,8 @@ namespace HCB.Core
         public UnityEvent OnStageSuccess = new UnityEvent();
         [HideInInspector]
         public UnityEvent OnStageFail = new UnityEvent();
+        [HideInInspector]
+        public UnityEvent OnStageEnd = new UnityEvent();
 
 
         private bool isGameStarted;
@@ -110,6 +112,8 @@ namespace HCB.Core
             else OnStageFail.Invoke();
 
             IsStageCompleted = true;
+
+            OnStageEnd.Invoke();
         }
 
         //#region GameConditions

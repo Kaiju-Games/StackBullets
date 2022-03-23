@@ -5,20 +5,23 @@ using UnityEngine;
 
 public class WheelRotate : MonoBehaviour
 {
+    private bool _isRotate;
+
+
     private void OnEnable()
     {
         if (Managers.Instance == null) return;
 
-        LevelManager.Instance.OnLevelStart.AddListener(Rotate);
-        LevelManager.Instance.OnLevelFinish.AddListener(Rotate);
+        LevelManager.Instance.OnLevelStart.AddListener(() => _isRotate = true);
+        GameManager.Instance.OnStageEnd.AddListener(() => _isRotate = false);
     }
 
     private void OnDisable()
     {
         if (Managers.Instance == null) return;
 
-        LevelManager.Instance.OnLevelStart.RemoveListener(Rotate);
-        LevelManager.Instance.OnLevelFinish.RemoveListener(Rotate);
+        LevelManager.Instance.OnLevelStart.RemoveListener(() => _isRotate = true);
+        GameManager.Instance.OnStageEnd.RemoveListener(() => _isRotate = false);
     }
 
 
@@ -36,18 +39,17 @@ public class WheelRotate : MonoBehaviour
         tr = transform;
     }
 
-    //Update;
-    void Update()
+
+    private void Update()
     {
-        //Rotate object;
         Rotate();
-       
     }
 
 
     void Rotate()
     {
-        tr.Rotate(rotationAxis * rotationSpeed * Time.deltaTime);
+        if (_isRotate)
+            tr.Rotate(rotationAxis * rotationSpeed * Time.deltaTime);
     }
 
 }

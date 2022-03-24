@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SourceObjects:
   - ID: Bullet
-    SourcePrefab: {fileID: 5000484418781424413, guid: 67ae1f8598cb3ee4890c1877f0235b04, type: 3}
+    SourcePrefab: {fileID: 2486586361950625209, guid: 53d69e38138f215478aadf63be78cea6, type: 3}
     MinNumberOfObject: 20
     AllowGrow: 1
     AutoDestroy: 1

@@ -10,6 +10,8 @@ public class MeshGenerator : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
 
+    public float unitWidth;
+
     public float unitLength;    // Minimum length of a spiral part
     public float thickness;     // The thickness of the spiral
     public Vector3 startingEulerAngles; // The transform of this object is rotated at the start to look more realistic

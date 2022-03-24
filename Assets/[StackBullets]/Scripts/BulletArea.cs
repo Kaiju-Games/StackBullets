@@ -30,7 +30,9 @@ public class BulletArea : MonoBehaviour
             _isCollided = true;
 
             Debug.Log("Boom");
-            EventManager.OnBulletTake.Invoke();
+
+            //EventManager.OnBulletTake.Invoke();
+
             _spiralGenerator = Instantiate(_spiralGeneratorPrefab, _scraper.position, Quaternion.identity);
 
             _spiralGenerator.transform.SetParent(_scraper);
@@ -42,12 +44,21 @@ public class BulletArea : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         _splineCharacter = other.GetComponentInParent<SplineCharacter>();
+
         
-        if(_splineCharacter != null && _isCollided)
+
+        if (_splineCharacter != null && _isCollided)
         {
+            _isCollided = false;
             Debug.Log("Exited");
+
+            //for Tank Arm Animation 
             EventManager.OnBulletTakeExit.Invoke();
-            
+
+            _spiralGenerator.transform.SetParent(null);
+
+            _spiralGenerator.GetComponent<MeshGenerator>().StopScraping();
+
         }
 
         _isExitedBulletArea = true ;

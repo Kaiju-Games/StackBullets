@@ -18,9 +18,9 @@ public class Bullets : MonoBehaviour
 
     void SpawnBullets()
     {
-        GameObject gO = PoolingSystem.Instance.InstantiateAPS("Bullet", bulletSpawnPos.position + Random.insideUnitSphere * 0.1f);
+        GameObject gO = PoolingSystem.Instance.InstantiateAPS("Bullet", bulletSpawnPos.position,bulletSpawnPos.rotation);
 
-        gO.transform.eulerAngles = new Vector3(0, -90, 0); //rotation Vector3 almiyor, eulerAngles yazilmali 
+        //gO.transform.eulerAngles = new Vector3(0, -90, 0); //rotation Vector3 almiyor, eulerAngles yazilmali 
 
         PoolingSystem.Instance.DestroyAPS(gO, _bulletDeleteTime);
 

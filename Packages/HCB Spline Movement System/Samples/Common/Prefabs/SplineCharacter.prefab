@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1482179412530385473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8346279175918845655}
-  m_Layer: 0
-  m_Name: SpiralRollSpawnPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8346279175918845655
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482179412530385473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 83839712935787366}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3546998779957008530
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +945,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 712893045847342937}
     m_Modifications:
+    - target: {fileID: 134040749226931393, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.423
+      objectReference: {fileID: 0}
+    - target: {fileID: 134040749226931393, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.298
+      objectReference: {fileID: 0}
     - target: {fileID: 151194709043263424, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
       propertyPath: m_Name
       value: Tank
@@ -1014,6 +992,14 @@ PrefabInstance:
     - target: {fileID: 3657495941389747506, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687246826861202622, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
+      propertyPath: m_Size.z
+      value: 0.26161766
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687246826861202622, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
+      propertyPath: m_Center.z
+      value: -2.8746443
       objectReference: {fileID: 0}
     - target: {fileID: 6687246826861202622, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
       propertyPath: m_IsTrigger
@@ -1088,11 +1074,6 @@ GameObject:
 --- !u!1 &4544073099226175678 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4146084087213875080, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
-  m_PrefabInstance: {fileID: 470085107579914038}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &83839712935787366 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 553881372509027408, guid: 35c82bb5bf369e24db04bb3f0fce7a68, type: 3}
   m_PrefabInstance: {fileID: 470085107579914038}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8178541770485219601

@@ -15,34 +15,43 @@ public class AnimationController : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventManager.OnBulletTake.AddListener(() => _isEntered = true);
-        EventManager.OnBulletTakeExit.AddListener(() => _isEntered = false);
+        //EventManager.OnBulletTake.AddListener(() => _isEntered = true);
+        //EventManager.OnBulletTakeExit.AddListener(() => _isEntered = false);
+
+        EventManager.OnBulletTakeExit.AddListener(TankArmAnim);
     }
 
     private void OnDisable()
     {
-        EventManager.OnBulletTake.RemoveListener(() => _isEntered = true);
-        EventManager.OnBulletTakeExit.RemoveListener(() => _isEntered = false);
+        //EventManager.OnBulletTake.RemoveListener(() => _isEntered = true);
+        //EventManager.OnBulletTakeExit.RemoveListener(() => _isEntered = false);
+
+        EventManager.OnBulletTakeExit.RemoveListener(TankArmAnim);
     }
 
     private void Update()
     {
-        CarveBullet();
-        CarveBulletExit();
+        //CarveBullet();
+        //CarveBulletExit();
     }
 
-    void CarveBullet()
-    {
+    //void CarveBullet()
+    //{
 
-        if(_isEntered)
-        _splineCharacterAnim.SetBool("CarveBullet",true);
+    //    if(_isEntered)
+    //    _splineCharacterAnim.SetBool("CarveBullet",true);
         
-    }
+    //}
 
-    void CarveBulletExit()
+    //void CarveBulletExit()
+    //{
+    //    if (!_isEntered)
+    //        _splineCharacterAnim.SetBool("CarveBullet", false);
+    //}
+
+    void TankArmAnim()
     {
-        if (!_isEntered)
-            _splineCharacterAnim.SetBool("CarveBullet", false);
+        _splineCharacterAnim.SetTrigger("TankArmAnim");
     }
 
 

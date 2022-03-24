@@ -12,7 +12,7 @@ public class BulletMove : MonoBehaviour
     private void Start()
     {
         _bulletRb = GetComponent<Rigidbody>();
-        _bulletRb.AddForce(Vector3.forward * _speed, ForceMode.Impulse);
+        _bulletRb.AddForce(transform.forward * _speed, ForceMode.Impulse); //transform.translate ile degisecek
     }
 
     private void Update()

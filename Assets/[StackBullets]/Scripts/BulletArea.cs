@@ -10,7 +10,13 @@ public class BulletArea : MonoBehaviour
     private bool _isEnteredBulletArea;
     private bool _isExitedBulletArea;
 
-    
+    private bool _isCollided;
+
+    [SerializeField] private Transform _scraper;
+    [SerializeField] private GameObject _spiralGeneratorPrefab;
+    GameObject _spiralGenerator;
+
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,10 +24,16 @@ public class BulletArea : MonoBehaviour
 
         _splineCharacter = other.GetComponentInParent<SplineCharacter>();
 
-        if (_splineCharacter != null)
+
+        if (_splineCharacter != null && !_isCollided)
         {
+            _isCollided = true;
+
             Debug.Log("Boom");
             EventManager.OnBulletTake.Invoke();
+            _spiralGenerator = Instantiate(_spiralGeneratorPrefab, _scraper.position, Quaternion.identity);
+
+            _spiralGenerator.transform.SetParent(_scraper);
         }
 
         _isEnteredBulletArea = true;
@@ -31,7 +43,7 @@ public class BulletArea : MonoBehaviour
     {
         _splineCharacter = other.GetComponentInParent<SplineCharacter>();
         
-        if(_splineCharacter != null)
+        if(_splineCharacter != null && _isCollided)
         {
             Debug.Log("Exited");
             EventManager.OnBulletTakeExit.Invoke();

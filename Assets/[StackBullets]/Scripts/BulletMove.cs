@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    private float _speed = 5f;
+    private float _speed = 50f;
 
     Rigidbody _bulletRb;
 
@@ -12,10 +12,11 @@ public class BulletMove : MonoBehaviour
     private void Start()
     {
         _bulletRb = GetComponent<Rigidbody>();
+        _bulletRb.AddForce(Vector3.forward * _speed, ForceMode.Impulse);
     }
 
     private void Update()
     {
-        _bulletRb.AddForce(Vector3.forward * _speed, ForceMode.Impulse);
+        
     }
 }

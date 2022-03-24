@@ -32,6 +32,6 @@ EditorBuildSettings:
       - JumpTest.unity
     guid: 52d4740816082704f8718703ded27154
   - enabled: 1
-    path: Assets/[StackBullets]/Levels/Level 01.unity
+    path: Assets/[StackBullets]/Levels/Test Level 01.unity
     guid: 5c0ce3b28f315014cb8a0939b4785471
   m_configObjects: {}

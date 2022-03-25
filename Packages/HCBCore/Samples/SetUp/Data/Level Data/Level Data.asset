@@ -15,3 +15,5 @@ MonoBehaviour:
   Levels:
   - LevelTypes: 
     LoadLevelID: Test Level 01
+  - LevelTypes: 
+    LoadLevelID: 

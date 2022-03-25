@@ -21,8 +21,13 @@ public class BulletArea : MonoBehaviour
     [SerializeField] private Transform _tankStorage;
     GameObject _spiralGenerator;
 
+    SpiralMeshChanger _spiralMeshChanger;
     
 
+    private void Start()
+    {
+        
+    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -51,8 +56,8 @@ public class BulletArea : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         _splineCharacter = other.GetComponentInParent<SplineCharacter>();
-
         
+
 
         if (_splineCharacter != null && _isCollided)
         {
@@ -71,10 +76,19 @@ public class BulletArea : MonoBehaviour
             spawnPos = _tankStorage.transform.position;
 
 
-            _spiralGenerator.transform.SetParent(_tankStorage);
-            _spiralGenerator.transform.DOLocalJump(Vector3.zero, 5, 1, 1);
-            
 
+            _spiralGenerator.transform.SetParent(_tankStorage);
+
+            //Componenti burada aliyoruz cunku OnTriggerEnter'da olusturuluyor prefab'i
+            _spiralMeshChanger = _spiralGenerator.GetComponentInParent<SpiralMeshChanger>();
+
+            _spiralGenerator.transform.DOLocalJump(Vector3.zero, 5, 1, 2f);
+
+
+
+
+            //changing Mesh
+            _spiralMeshChanger.MeshChanger();
             
 
 

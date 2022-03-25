@@ -72,7 +72,7 @@ public class BulletArea : MonoBehaviour
 
 
             _spiralGenerator.transform.SetParent(_tankStorage);
-            _spiralGenerator.transform.DOLocalJump(Vector3.zero, 4, 1, 2);
+            _spiralGenerator.transform.DOLocalJump(Vector3.zero, 5, 1, 1);
             
 
             

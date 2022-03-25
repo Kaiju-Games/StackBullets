@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitWidth: 5.44
-  unitLength: 0.05
-  thickness: 0.02
+  unitLength: 0.02
+  thickness: 0.01
   startingEulerAngles: {x: -60, y: 0, z: 0}
   rotationEulerAngles: {x: 15, y: 0, z: 0}
   spiralVelocity: {x: 0, y: 6, z: 12}

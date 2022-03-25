@@ -1,3 +1,4 @@
+using HCB.Core;
 using HCB.PoolingSystem;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,17 +11,43 @@ public class Bullets : MonoBehaviour
     [SerializeField] private float _spawnRate = 5f;
     [SerializeField] private float _bulletDeleteTime = 5f;
     private bool _isCollided;
+    private bool _isGameStarted;
+
+    #region Listeners
+    private void OnEnable()
+    {
+        if (Managers.Instance == null) return;
+
+        LevelManager.Instance.OnLevelStart.AddListener(() => _isGameStarted = true);
+        GameManager.Instance.OnStageEnd.AddListener(() => _isGameStarted = false);
+    }
+
+    private void OnDisable()
+    {
+        if (Managers.Instance == null) return;
+
+        LevelManager.Instance.OnLevelStart.RemoveListener(() => _isGameStarted = true);
+        GameManager.Instance.OnStageEnd.RemoveListener(() => _isGameStarted = false);
+    }
+    #endregion
+
 
     private void Start()
     {
-        StartCoroutine(SpawnRate());
+        
+            StartCoroutine(SpawnRate());
     }
+
+
+
 
     void SpawnBullets()
     {
-        GameObject gO = PoolingSystem.Instance.InstantiateAPS("Bullet", bulletSpawnPos.position,bulletSpawnPos.rotation);
+        if (!_isGameStarted) return;
 
-        //gO.transform.eulerAngles = new Vector3(0, -90, 0); //rotation Vector3 almiyor, eulerAngles yazilmali 
+        GameObject gO = PoolingSystem.Instance.InstantiateAPS("Bullet", bulletSpawnPos.position, bulletSpawnPos.rotation);
+
+        //gO.transform.eulerAngles = new Vector3(0, -90, 0); //rotation Vector3 almiyor, eulerAngles yazilmali
 
         PoolingSystem.Instance.DestroyAPS(gO, _bulletDeleteTime);
 
@@ -28,7 +55,7 @@ public class Bullets : MonoBehaviour
 
     IEnumerator SpawnRate()
     {
-        while(true)
+        while (true)
         {
             yield return new WaitForSecondsRealtime(_spawnRate);
             SpawnBullets();

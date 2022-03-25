@@ -204,6 +204,6 @@ public class MeshGenerator : MonoBehaviour
         col.enabled = true;
 
         // Set the velocity of the rigidbody
-        GetComponent<Rigidbody>().velocity = spiralVelocity;
+        //GetComponent<Rigidbody>().velocity = spiralVelocity;
     }
 }

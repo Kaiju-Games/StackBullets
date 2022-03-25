@@ -3,6 +3,7 @@ using HCB.SplineMovementSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BulletArea : MonoBehaviour
 {
@@ -10,11 +11,17 @@ public class BulletArea : MonoBehaviour
     private bool _isEnteredBulletArea;
     private bool _isExitedBulletArea;
 
+   
+
     private bool _isCollided;
 
     [SerializeField] private Transform _scraper;
     [SerializeField] private GameObject _spiralGeneratorPrefab;
+
+    [SerializeField] private Transform _tankStorage;
     GameObject _spiralGenerator;
+
+    
 
 
 
@@ -56,8 +63,20 @@ public class BulletArea : MonoBehaviour
             EventManager.OnBulletTakeExit.Invoke();
 
             _spiralGenerator.transform.SetParent(null);
-
             _spiralGenerator.GetComponent<MeshGenerator>().StopScraping();
+
+            //Tank sepetinde biriktirmek icin pos
+            Vector3 spawnPos = Vector3.zero;
+
+            spawnPos = _tankStorage.transform.position;
+
+
+            _spiralGenerator.transform.SetParent(_tankStorage);
+            _spiralGenerator.transform.DOLocalJump(Vector3.zero, 4, 1, 2);
+            
+
+            
+
 
         }
 

@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class BulletArea : MonoBehaviour
 {
-    private SplineCharacter _splineCharacter;
+    /*private SplineCharacter _splineCharacter;*/ //burada tanimlarsam hafizada bosuna yer tutar
     private bool _isEnteredBulletArea;
     private bool _isExitedBulletArea;
 
@@ -24,17 +24,12 @@ public class BulletArea : MonoBehaviour
     SpiralMeshChanger _spiralMeshChanger;
     
 
-    private void Start()
-    {
-        
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.name); // bu degdigi seylerin ismini donecek.
 
-        _splineCharacter = other.GetComponentInParent<SplineCharacter>();
+        SplineCharacterClampController _splineCharacter = other.GetComponent<SplineCharacterClampController>();
 
 
         if (_splineCharacter != null && !_isCollided)
@@ -48,15 +43,17 @@ public class BulletArea : MonoBehaviour
             _spiralGenerator = Instantiate(_spiralGeneratorPrefab, _scraper.position, Quaternion.identity);
 
             _spiralGenerator.transform.SetParent(_scraper);
+
+            _isEnteredBulletArea = true;
         }
 
-        _isEnteredBulletArea = true;
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _splineCharacter = other.GetComponentInParent<SplineCharacter>();
-        
+        SplineCharacterClampController _splineCharacter = other.GetComponent<SplineCharacterClampController>();
+
 
 
         if (_splineCharacter != null && _isCollided)
@@ -89,12 +86,12 @@ public class BulletArea : MonoBehaviour
 
             //changing Mesh
             _spiralMeshChanger.MeshChanger();
-            
 
+            _isEnteredBulletArea = false;
 
         }
 
-        _isExitedBulletArea = true ;
+        
     }
 
 }

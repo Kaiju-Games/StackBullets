@@ -99,12 +99,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitWidth: 5.44
-  unitLength: 0.02
-  thickness: 0.01
+  unitLength: 0.01
+  thickness: 0.005
   startingEulerAngles: {x: -60, y: 0, z: 0}
   rotationEulerAngles: {x: 10.42, y: 0, z: 0}
   spiralVelocity: {x: 0, y: 20.94, z: 12}
-  spiralLifeSpan: 12
+  spiralLifeSpan: 146.75
 --- !u!136 &-7368572917075736666
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f103edb83d24ce84cad3b1658eb89f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: 0}
-  size: {x: 0.21, y: 0.21, z: 0.95}
+  center: {x: 0.03, y: 0, z: 0.01}
+  size: {x: 1.15, y: 0.25, z: 0.23}
 --- !u!1 &4950952592862682771
 GameObject:
   m_ObjectHideFlags: 0

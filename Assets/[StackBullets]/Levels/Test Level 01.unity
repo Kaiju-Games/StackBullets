@@ -3217,6 +3217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gateText: {fileID: 1552840032}
+  _score: 3
 --- !u!1 &669660992
 GameObject:
   m_ObjectHideFlags: 0
@@ -6980,19 +6981,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '2
-
-'
+  m_text: 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bbf607405b46f9e4f98f6b0369f356b5, type: 2}
+  m_sharedMaterial: {fileID: 1041144483999984648, guid: bbf607405b46f9e4f98f6b0369f356b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4293845700
+  m_fontColor: {r: 0.77007836, g: 0.8867464, b: 0.9339623, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7072,7 +7071,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 1041144483999984648, guid: bbf607405b46f9e4f98f6b0369f356b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13000,3 +12999,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8419486697939938597, guid: a551b3cde67462b4c9aa7aa2510a8018, type: 3}
   m_PrefabInstance: {fileID: 8178541770495628054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8178541770495628059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 172226510002746007, guid: a551b3cde67462b4c9aa7aa2510a8018, type: 3}
+  m_PrefabInstance: {fileID: 8178541770495628054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8178541770495628060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8178541770495628059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787746b579671f54e990d35fe7ecef77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

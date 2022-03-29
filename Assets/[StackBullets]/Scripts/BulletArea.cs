@@ -87,6 +87,8 @@ public class BulletArea : MonoBehaviour
             //changing Mesh
             _spiralMeshChanger.MeshChanger();
 
+            EventManager.BulletIncrease.Invoke();
+
             _isEnteredBulletArea = false;
 
         }

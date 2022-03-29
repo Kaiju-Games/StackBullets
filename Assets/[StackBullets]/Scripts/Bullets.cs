@@ -13,6 +13,9 @@ public class Bullets : MonoBehaviour
     private bool _isCollided;
     private bool _isGameStarted;
 
+    private int _bulletCount;
+    private float _timer;
+
     #region Listeners
     private void OnEnable()
     {
@@ -20,6 +23,7 @@ public class Bullets : MonoBehaviour
 
         LevelManager.Instance.OnLevelStart.AddListener(() => _isGameStarted = true);
         GameManager.Instance.OnStageEnd.AddListener(() => _isGameStarted = false);
+        EventManager.BulletIncrease.AddListener(AddBullet);
     }
 
     private void OnDisable()
@@ -28,14 +32,16 @@ public class Bullets : MonoBehaviour
 
         LevelManager.Instance.OnLevelStart.RemoveListener(() => _isGameStarted = true);
         GameManager.Instance.OnStageEnd.RemoveListener(() => _isGameStarted = false);
+        EventManager.BulletIncrease.RemoveListener(AddBullet);
     }
+
     #endregion
 
 
     private void Start()
     {
         
-            StartCoroutine(SpawnRate());
+            
     }
 
 
@@ -51,22 +57,46 @@ public class Bullets : MonoBehaviour
 
         PoolingSystem.Instance.DestroyAPS(gO, _bulletDeleteTime);
 
+        _bulletCount--;
+
+        EventManager.BulletDecrease.Invoke();
+
+
     }
 
-    IEnumerator SpawnRate()
+    private void Update()
     {
-        while (true)
+        if (_bulletCount <= 0) return;
+
+        _timer += Time.deltaTime;
+
+        if(_timer >= _spawnRate)
         {
-            yield return new WaitForSecondsRealtime(_spawnRate);
             SpawnBullets();
+            _timer = 0;
         }
     }
+
+    //IEnumerator SpawnRate()
+    //{
+    //    while (_bulletCount > 0)
+    //    {
+    //        Debug.Log("bullet");
+    //        yield return new WaitForSecondsRealtime(_spawnRate);
+    //        SpawnBullets();
+    //    }
+    //}
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
 
         Gizmos.DrawWireSphere(bulletSpawnPos.position, .1f);
+    }
+
+    void AddBullet()
+    {
+        _bulletCount++;
     }
 
 }

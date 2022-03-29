@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TextMeshPro _gateText;
 
-    int _score = 5;
+    [SerializeField] int _score = 3;
 
     private void Awake()
     {
@@ -26,12 +26,16 @@ public class ScoreManager : MonoBehaviour
 
     public void RemovePoint()
     {
-        GateManager _gateManager = GetComponent<GateManager>();
+        GateManager _gateManager = GetComponentInParent<GateManager>();
         _score -= 1;
         _gateText.text = _score.ToString();
 
         if (_score == 0)
+        {
+            _score = 0;
             Destroy(_gateManager.gameObject);
+        }
+            
     }
 
    

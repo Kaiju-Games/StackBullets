@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918124fc41f7ce84f914ca5c5462347e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitWidth: 5.44
-  unitLength: 0.01
+  unitWidth: 0
+  unitLength: 0.001
   thickness: 0.005
   startingEulerAngles: {x: -60, y: 0, z: 0}
   rotationEulerAngles: {x: 10.42, y: 0, z: 0}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {x: 0.03, y: 0, z: 0.01}
-  size: {x: 1.15, y: 0.25, z: 0.23}
+  size: {x: 1, y: 0.24, z: 0.19}
 --- !u!1 &4950952592862682771
 GameObject:
   m_ObjectHideFlags: 0

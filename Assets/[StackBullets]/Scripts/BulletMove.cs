@@ -9,20 +9,27 @@ public class BulletMove : MonoBehaviour
 
     Rigidbody _bulletRb;
 
-    private bool _canShoot;
+    private bool _canShoot = true;
 
    
 
     private void Start()
     {
-        _bulletRb = GetComponent<Rigidbody>();
-        Fire();
+        _bulletRb = GetComponentInChildren<Rigidbody>();
+        
   
+    }
+
+    private void FixedUpdate()
+    {
+        Fire();
     }
 
     void Fire()
     {
-        _bulletRb.AddForce(transform.forward * _speed, ForceMode.Impulse); //transform.translate ile degisecek
+        if (!_canShoot) return;
+        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+        /*_bulletRb.AddForce(transform.forward * _speed, ForceMode.Impulse)*/; //transform.translate ile degisecek
     }
 
 }

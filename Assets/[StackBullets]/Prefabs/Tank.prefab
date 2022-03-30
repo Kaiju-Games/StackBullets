@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7876176300852344318}
+  - {fileID: 5674050007849246175}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -59,6 +60,7 @@ MonoBehaviour:
   Dampening: -1
   Inertia: 0
   remainingTranslation: {x: 0, y: 0, z: 0}
+  TankStorage: {fileID: 0}
 --- !u!65 &6687246826861202622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -159,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787746b579671f54e990d35fe7ecef77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _emptyLayoutobject: {fileID: 0}
 --- !u!1 &522189405152167335
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +236,96 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4233608, y: 0.45310992, z: 0.9725492}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7134933437125332324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5674050007849246175}
+  - component: {fileID: 3741706938731470614}
+  - component: {fileID: 6090434004529461471}
+  m_Layer: 0
+  m_Name: Paint3d
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5674050007849246175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134933437125332324}
+  m_LocalRotation: {x: 0.00000003774895, y: -0, z: 1.1825044e-14, w: 1}
+  m_LocalPosition: {x: 0.0050002066, y: 0.024685875, z: -3.0094755}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8792130545258687452}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3741706938731470614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134933437125332324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6944f1d49f305f943a82dfc92ce2205c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSpacing: 0
+  hitLimit: 30
+  connectHits: 1
+  paintIn: 0
+  interval: 0.05
+  preview: 0
+  priority: 0
+  pressure: 1
+  lastPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &6090434004529461471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134933437125332324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724ff6f732015ec4e8fecdb3d889fb82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  group:
+    index: 0
+  targetModel: {fileID: 0}
+  targetTexture: {fileID: 0}
+  blendMode:
+    Index: 6
+    Color: {r: 1, g: 1, b: 1, a: 1}
+    Texture: {fileID: 0}
+    Kernel: 1
+    Channels: {x: 1, y: 1, z: 1, w: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  opacity: 1
+  angle: 0
+  scale: {x: 8.46, y: 10.09, z: 0.01}
+  radius: 0.1
+  hardness: 30
+  tileTexture: {fileID: 0}
+  tileTransform: {fileID: 0}
+  tileOpacity: 1
+  tileTransition: 4
+  modifiers:
+    modifierDatas: []
 --- !u!1 &7312728909718301491
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,14 +672,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96141ff259a5cb44837a8fd96adcb65, type: 3}
---- !u!4 &2223771581788983129 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d96141ff259a5cb44837a8fd96adcb65, type: 3}
-  m_PrefabInstance: {fileID: 1825880919695255730}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1555919815545476579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d96141ff259a5cb44837a8fd96adcb65, type: 3}
+  m_PrefabInstance: {fileID: 1825880919695255730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2223771581788983129 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d96141ff259a5cb44837a8fd96adcb65, type: 3}
   m_PrefabInstance: {fileID: 1825880919695255730}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3773971883046904654

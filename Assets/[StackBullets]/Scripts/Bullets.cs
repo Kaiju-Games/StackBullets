@@ -14,7 +14,7 @@ public class Bullets : MonoBehaviour
     private bool _isGameStarted;
 
     private int _bulletCount;
-    private float _timer;
+    private float _timer = Mathf.Infinity;
 
     #region Listeners
     private void OnEnable()
@@ -38,13 +38,6 @@ public class Bullets : MonoBehaviour
     #endregion
 
 
-    private void Start()
-    {
-        
-            
-    }
-
-
 
 
     void SpawnBullets()
@@ -53,6 +46,7 @@ public class Bullets : MonoBehaviour
 
         GameObject gO = PoolingSystem.Instance.InstantiateAPS("Bullet", bulletSpawnPos.position, bulletSpawnPos.rotation);
 
+       
         //gO.transform.eulerAngles = new Vector3(0, -90, 0); //rotation Vector3 almiyor, eulerAngles yazilmali
 
         PoolingSystem.Instance.DestroyAPS(gO, _bulletDeleteTime);

@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TextMeshPro _gateText;
 
-    [SerializeField] int _score = 3;
+    [SerializeField] int _score = 2;
 
     private void Awake()
     {

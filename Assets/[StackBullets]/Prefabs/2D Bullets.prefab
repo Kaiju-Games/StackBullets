@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scraper: {fileID: 0}
   _spiralGeneratorPrefab: {fileID: 467935789008960223, guid: 92366bf481e7643408e2f51a629468a8, type: 3}
+  _tankStorage: {fileID: 0}
 --- !u!65 &6658264295660034056
 BoxCollider:
   m_ObjectHideFlags: 0

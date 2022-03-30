@@ -8,6 +8,8 @@ namespace HCB.SplineMovementSystem
     {
         SplineCharacter _splineCharacter;
         SplineCharacter SplineCharacter => _splineCharacter == null ? _splineCharacter = GetComponentInParent<SplineCharacter>() : _splineCharacter;
+
+        public Transform TankStorage;
               
         private Vector3 _targetRotation = Vector3.zero;
         protected override void Update()

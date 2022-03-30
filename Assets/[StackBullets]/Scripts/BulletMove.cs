@@ -11,6 +11,7 @@ public class BulletMove : MonoBehaviour
 
     private bool _canShoot = true;
 
+    public Transform visual;
    
 
     private void Start()

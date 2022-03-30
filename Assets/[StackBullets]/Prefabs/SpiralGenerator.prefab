@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 467935789008960222}
   - component: {fileID: -7368572917075736666}
   - component: {fileID: -1084894879493229759}
-  - component: {fileID: 7711940224724176665}
   m_Layer: 0
   m_Name: SpiralGenerator
   m_TagString: Untagged
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 467935789008960223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_Children:
   - {fileID: 5764187004930704425}
   m_Father: {fileID: 0}
@@ -101,7 +100,7 @@ MonoBehaviour:
   unitWidth: 0
   unitLength: 0.001
   thickness: 0.005
-  startingEulerAngles: {x: -60, y: 0, z: 0}
+  startingEulerAngles: {x: -60, y: 15, z: 0}
   rotationEulerAngles: {x: 10.42, y: 0, z: 0}
   spiralVelocity: {x: 0, y: 20.94, z: 12}
   spiralLifeSpan: 146.75
@@ -133,20 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spiralMeshRenderer: {fileID: 467935789008960221}
   _bulletMeshRenderer: {fileID: 6896608992820117318}
---- !u!114 &7711940224724176665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 467935789008960223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f103edb83d24ce84cad3b1658eb89f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {x: 0.03, y: 0, z: 0.01}
-  size: {x: 1, y: 0.24, z: 0.19}
 --- !u!1 &4950952592862682771
 GameObject:
   m_ObjectHideFlags: 0

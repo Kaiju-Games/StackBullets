@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TankStorage : MonoBehaviour
 {
+
+    [SerializeField] private GameObject _emptyLayoutobject;
     private void OnEnable()
     {
         EventManager.BulletDecrease.AddListener(RemoveBulletVisual);
@@ -14,6 +16,19 @@ public class TankStorage : MonoBehaviour
     {
         EventManager.BulletDecrease.RemoveListener(RemoveBulletVisual);
     }
+
+
+
+    private void Update()
+    {
+        
+    }
+
+    void EmptyGameObject()
+    {
+        
+    }
+
 
     void RemoveBulletVisual()
     {

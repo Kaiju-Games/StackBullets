@@ -41,7 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3416972104953635451}
   - component: {fileID: 3956196794931037932}
-  - component: {fileID: 8295686737528538250}
+  - component: {fileID: 7041007758939307903}
+  - component: {fileID: 8581796088253461042}
   m_Layer: 0
   m_Name: BulletParent
   m_TagString: Untagged
@@ -77,20 +78,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visual: {fileID: 8597761742509776763}
---- !u!114 &8295686737528538250
-MonoBehaviour:
+--- !u!65 &7041007758939307903
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3416972104953635450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f103edb83d24ce84cad3b1658eb89f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {x: 0.09, y: 0, z: 0}
-  size: {x: 0.22, y: 0.21, z: 1.02}
+  serializedVersion: 2
+  m_Size: {x: 0.20403859, y: 0.21092004, z: 1}
+  m_Center: {x: 0.0011468679, y: 0.00458768, z: 0}
+--- !u!54 &8581796088253461042
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3416972104953635450}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &3416972106385293232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,8 +162,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2486586361950625214, guid: 53d69e38138f215478aadf63be78cea6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53d69e38138f215478aadf63be78cea6, type: 3}
 --- !u!4 &478076131293460659 stripped
 Transform:

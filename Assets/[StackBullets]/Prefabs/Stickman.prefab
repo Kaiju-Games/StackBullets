@@ -980,6 +980,8 @@ GameObject:
   - component: {fileID: 4168013989838014586}
   - component: {fileID: 3646809626409112258}
   - component: {fileID: 3646809626409112257}
+  - component: {fileID: 1194276798}
+  - component: {fileID: 1194276799}
   m_Layer: 0
   m_Name: Stickman
   m_TagString: Untagged
@@ -994,7 +996,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3646809626409112256}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.77, y: 1.1, z: 9.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1015,7 +1017,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1027,12 +1029,68 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3646809626409112256}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.3562561
   m_Height: 1.7664294
   m_Direction: 1
   m_Center: {x: 0.022662252, y: 0.85726786, z: 0}
+--- !u!95 &1194276798
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646809626409112256}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 8b1c58554ceaa184fb8797807ca1cf49, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7143421eccabb184b85a90891cba4c53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1194276799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646809626409112256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe28b8dc5e43e88438cd2434982d9df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCollider: {fileID: 3646809626409112257}
+  AllColliders:
+  - {fileID: 8603344855364046009}
+  - {fileID: 4981048418092268668}
+  - {fileID: 6412221367841180025}
+  - {fileID: 7499183293146981332}
+  - {fileID: 1434443349047159530}
+  - {fileID: 4539022612039237863}
+  - {fileID: 5661440584447423293}
+  - {fileID: 325950706668129304}
+  - {fileID: 8655184382240826693}
+  - {fileID: 2623138902702460468}
+  - {fileID: 2047479770939157259}
+  AllRigidbodies:
+  - {fileID: 7314294299416278886}
+  - {fileID: 2899989849685111553}
+  - {fileID: 8282141306767311692}
+  - {fileID: 1320147174588790656}
+  - {fileID: 8720813268991395811}
+  - {fileID: 1160505008360333368}
+  - {fileID: 3522574325717156956}
+  - {fileID: 7885356184648493674}
+  - {fileID: 4960278958592696646}
+  - {fileID: 5819261449684583771}
+  - {fileID: 8130456041063212479}
 --- !u!1 &3648058866735163658
 GameObject:
   m_ObjectHideFlags: 0

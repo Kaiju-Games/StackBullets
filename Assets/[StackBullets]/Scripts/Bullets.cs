@@ -46,7 +46,7 @@ public class Bullets : MonoBehaviour
 
         GameObject gO = PoolingSystem.Instance.InstantiateAPS("Bullet", bulletSpawnPos.position, bulletSpawnPos.rotation);
 
-       
+
         //gO.transform.eulerAngles = new Vector3(0, -90, 0); //rotation Vector3 almiyor, eulerAngles yazilmali
 
         PoolingSystem.Instance.DestroyAPS(gO, _bulletDeleteTime);

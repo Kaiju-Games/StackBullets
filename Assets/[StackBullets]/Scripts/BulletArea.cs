@@ -91,7 +91,7 @@ namespace AutoLayout3D
 
                 _spiralGenerator.transform.SetParent(dummy.transform);
 
-                _spiralGenerator.transform.DOLocalJump(Vector3.zero, 3, 1, 2f).SetEase(Ease.OutExpo).OnComplete(()=> EventManager.BulletIncrease.Invoke());
+                _spiralGenerator.transform.DOLocalJump(Vector3.zero, 4, 1, 2f).SetEase(Ease.OutExpo).OnComplete(()=> EventManager.BulletIncrease.Invoke());
                 _spiralGenerator.transform.DOLocalRotate(Vector3.zero, 2f);
 
 

@@ -18,6 +18,9 @@ namespace HCB.Core
         public static UnityEvent BulletIncrease = new UnityEvent();
         public static UnityEvent BulletDecrease = new UnityEvent();
 
+        public static UnityEvent OnHit = new UnityEvent();
+
+
 
         #region Editor
         public static UnityEvent OnLevelDataChange = new UnityEvent();

@@ -55,6 +55,7 @@ public class Bullets : MonoBehaviour
 
         EventManager.BulletDecrease.Invoke();
 
+        
 
     }
 

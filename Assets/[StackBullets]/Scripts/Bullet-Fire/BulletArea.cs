@@ -101,10 +101,18 @@ namespace AutoLayout3D
 
                 _isEnteredBulletArea = false;
 
+
+
             }
 
 
         }
+
+        //IEnumerator BulletAreaTimer()
+        //{
+          
+            
+        //}
 
     }
 }

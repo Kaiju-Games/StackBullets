@@ -21,19 +21,19 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        _gateText.text = _score.ToString();
+        _gateText.text = _score.ToString() + "X";
     }
 
     public void RemovePoint()
     {
         GateManager _gateManager = GetComponentInParent<GateManager>();
         _score -= 1;
-        _gateText.text = _score.ToString();
+        _gateText.text = _score.ToString() + "X";
 
         if (_score == 0)
         {
             _score = 0;
-            Destroy(_gateManager.gameObject);
+            Destroy(_gateManager);
         }
             
     }

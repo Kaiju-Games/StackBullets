@@ -23,6 +23,6 @@ public class BarrelMove : MonoBehaviour
     {
         if (tween != null)
             tween.Kill(true);
-        tween = transform.DOPunchPosition(Vector3.forward / 2, .5f, 1);
+        tween = transform.DOPunchPosition(Vector3.forward / 2, 1f, 3);
     }
 }

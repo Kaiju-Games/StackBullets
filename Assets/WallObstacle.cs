@@ -26,9 +26,13 @@ public class WallObstacle : MonoBehaviour
     [Button]
     public void DestructWall()
     {
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+
+
         foreach (var wall in wallPieces)
         {
             wall.GetComponent<Rigidbody>().isKinematic = false;
+            
             wall.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), Random.Range(-1, 2)) * 200);
         }
     }
@@ -42,11 +46,10 @@ public class WallObstacle : MonoBehaviour
         if (splineCharacter != null && !isCollided)
         {
             isCollided = true;
-            
+            GameManager.Instance.CompeleteStage(false);
 
         }
-        if(other.gameObject == splineCharacter)
-            DestructWall();
+        
 
 
 

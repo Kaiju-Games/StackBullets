@@ -201,7 +201,7 @@ public class MeshGenerator : MonoBehaviour
         }
         
         col.radius = Vector3.Distance(col.center, vertices[vertices.Length - 5]) - 0.05f;
-        col.enabled = true;
+        col.enabled = false;
 
         // Set the velocity of the rigidbody
         //GetComponent<Rigidbody>().velocity = spiralVelocity;

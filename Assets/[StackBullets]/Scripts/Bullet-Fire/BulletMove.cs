@@ -40,12 +40,22 @@ public class BulletMove : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         StickmanController stickmanController = other.GetComponent<StickmanController>();
+        
 
         if (stickmanController != null)
         {
             stickmanController.DoRagdollForce(true, Vector3.forward + Vector3.up / 2, 600);
-            gameObject.SetActive(false);
+            
             PoolingSystem.Instance.InstantiateAPS("HitParticleFX", transform.position);
         }
+        else
+        {
+            //particle gelecek.
+        }
+
+        gameObject.SetActive(false);
+
+
+
     }
 }

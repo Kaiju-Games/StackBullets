@@ -19,8 +19,7 @@ public class BulletMove : MonoBehaviour
     private void Start()
     {
         _bulletRb = GetComponentInChildren<Rigidbody>();
-        
-  
+
     }
 
     private void FixedUpdate()
@@ -53,7 +52,7 @@ public class BulletMove : MonoBehaviour
             //particle gelecek.
         }
 
-        gameObject.SetActive(false);
+         gameObject.SetActive(false);
 
 
 

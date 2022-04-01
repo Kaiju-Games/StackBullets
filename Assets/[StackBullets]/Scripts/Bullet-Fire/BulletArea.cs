@@ -6,12 +6,23 @@ using UnityEngine;
 using DG.Tweening;
 
 
-namespace AutoLayout3D
+namespace AutoLayout3D //dikkat 
 {
     public class BulletArea : MonoBehaviour
     {
+
+        private void OnEnable()
+        {
+            EventManager.OnBulletTake.AddListener(OnEnteredBulletArea);
+        }
+
+        private void OnDisable()
+        {
+            EventManager.OnBulletTake.RemoveListener(OnEnteredBulletArea);
+        }
+
         /*private SplineCharacter _splineCharacter;*/ //burada tanimlarsam hafizada bosuna yer tutar
-        private bool _isEnteredBulletArea;
+        public bool _isEnteredBulletArea; //Bullets scripti de kullaniyor dikkat.
         private bool _isExitedBulletArea;
 
         private float _startTime;
@@ -33,13 +44,21 @@ namespace AutoLayout3D
         SpiralMeshChanger _spiralMeshChanger;
 
 
+        void OnEnteredBulletArea()
+        {
+            
+            
+
+        }
+
 
         private void OnTriggerEnter(Collider other)
         {
             Debug.Log(other.name); // bu degdigi seylerin ismini donecek.
 
             SplineCharacterClampController _splineCharacter = other.GetComponent<SplineCharacterClampController>();
-
+            Bullets bullets = GetComponent<Bullets>();
+         
 
             if (_splineCharacter != null && !_isCollided)
             {
@@ -55,8 +74,17 @@ namespace AutoLayout3D
 
                 _isEnteredBulletArea = true;
 
+                //bullets._canShoot = false;
+
+                EventManager.OnMovementStop.Invoke();
+
+
                 _startTime = Time.time;
+                OnEnteredBulletArea();
+
             }
+
+            
 
 
         }
@@ -65,10 +93,14 @@ namespace AutoLayout3D
         {
             SplineCharacterClampController _splineCharacter = other.GetComponent<SplineCharacterClampController>();
             LayoutElement3D layoutElement3D = GetComponentInParent<LayoutElement3D>();
-    
+            
+
 
         if (_splineCharacter != null && _isCollided)
             {
+
+                EventManager.OnMovementStart.Invoke();
+
                 //bu bize ne kadar on trigger'da kaldigimizi donecek.
                 float timeSpent = Time.time - _startTime;
 
@@ -126,11 +158,7 @@ namespace AutoLayout3D
 
                 }
 
-
-
                 _isEnteredBulletArea = false;
-
-
 
             }
 

@@ -17,19 +17,6 @@ public class TankStorage : MonoBehaviour
         EventManager.BulletDecrease.RemoveListener(RemoveBulletVisual);
     }
 
-
-
-    private void Update()
-    {
-        
-    }
-
-    void EmptyGameObject()
-    {
-        
-    }
-
-
     void RemoveBulletVisual()
     {
         if (transform.childCount <= 0)

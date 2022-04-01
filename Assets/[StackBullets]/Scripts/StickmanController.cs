@@ -1,7 +1,9 @@
 using HCB.Core;
+using HCB.SplineMovementSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class StickmanController : MonoBehaviour
 {
@@ -15,6 +17,16 @@ public class StickmanController : MonoBehaviour
     {
        
         DoRagdoll(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        SplineCharacter splineCharacter = other.GetComponentInParent<SplineCharacter>();
+        if(splineCharacter != null)
+        {
+            Debug.Log("HitStickMan");
+            DoRagdollForce(true,Vector3.forward + Vector3.up/2, 1200);
+        }
     }
 
     public void DoRagdoll(bool isRagdoll)

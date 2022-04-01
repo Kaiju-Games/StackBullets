@@ -20,6 +20,11 @@ namespace HCB.Core
 
         public static UnityEvent OnHit = new UnityEvent();
 
+        public static UnityEvent OnMovementStart = new UnityEvent();
+        public static UnityEvent OnMovementStop = new UnityEvent();
+
+
+
 
 
         #region Editor

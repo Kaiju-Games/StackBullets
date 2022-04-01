@@ -47,33 +47,9 @@ public class WallObstacle : MonoBehaviour
         {
             isCollided = true;
             GameManager.Instance.CompeleteStage(false);
-
+            //tankpatlama particle gelecek
         }
         
-
-
-
-
-
-
-
-
-
-        //Bullets sc = splineCharacter.GetComponent<StackController>();
-
-
-
-
-
-        //if (other.gameObject == splineCharacter)
-        //{
-        //    GameManager.Instance.CompeleteStage(false);
-        //    
-        //    return;
-        //}
-
-        ////sc.CurrentCollectibles[sc.CurrentCollectibles.Count - 1].Uncollect(sc);
-        //HapticManager.Haptic(HapticTypes.RigidImpact);
 
     }
 }

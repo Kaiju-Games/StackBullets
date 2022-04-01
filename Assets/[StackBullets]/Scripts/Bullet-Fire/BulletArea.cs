@@ -10,16 +10,12 @@ namespace AutoLayout3D //dikkat
 {
     public class BulletArea : MonoBehaviour
     {
-
-        private void OnEnable()
+        Bullets bullets;
+        private void Start()
         {
-            EventManager.OnBulletTake.AddListener(OnEnteredBulletArea);
+            bullets = FindObjectOfType<Bullets>();
         }
-
-        private void OnDisable()
-        {
-            EventManager.OnBulletTake.RemoveListener(OnEnteredBulletArea);
-        }
+       
 
         /*private SplineCharacter _splineCharacter;*/ //burada tanimlarsam hafizada bosuna yer tutar
         public bool _isEnteredBulletArea; //Bullets scripti de kullaniyor dikkat.
@@ -43,13 +39,8 @@ namespace AutoLayout3D //dikkat
 
         SpiralMeshChanger _spiralMeshChanger;
 
-
-        void OnEnteredBulletArea()
-        {
-            
-            
-
-        }
+        
+      
 
 
         private void OnTriggerEnter(Collider other)
@@ -57,12 +48,14 @@ namespace AutoLayout3D //dikkat
             Debug.Log(other.name); // bu degdigi seylerin ismini donecek.
 
             SplineCharacterClampController _splineCharacter = other.GetComponent<SplineCharacterClampController>();
-            Bullets bullets = GetComponent<Bullets>();
-         
+
+            
 
             if (_splineCharacter != null && !_isCollided)
             {
+
                 _isCollided = true;
+                bullets.CanShoot = false;
 
                 Debug.Log("Boom");
 
@@ -74,13 +67,13 @@ namespace AutoLayout3D //dikkat
 
                 _isEnteredBulletArea = true;
 
-                //bullets._canShoot = false;
+                
 
-                EventManager.OnMovementStop.Invoke();
+                //EventManager.OnMovementStop.Invoke();
 
 
                 _startTime = Time.time;
-                OnEnteredBulletArea();
+                
 
             }
 
@@ -96,10 +89,12 @@ namespace AutoLayout3D //dikkat
             
 
 
-        if (_splineCharacter != null && _isCollided)
+            if (_splineCharacter != null && _isCollided)
             {
+                
+                bullets.CanShoot = true;
 
-                EventManager.OnMovementStart.Invoke();
+                //EventManager.OnMovementStart.Invoke();
 
                 //bu bize ne kadar on trigger'da kaldigimizi donecek.
                 float timeSpent = Time.time - _startTime;

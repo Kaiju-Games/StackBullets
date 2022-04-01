@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6658264295660034057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.32, y: 0.03, z: -8.48}
-  m_LocalScale: {x: 0.31886652, y: 0.39557, z: 0.889637}
+  m_LocalScale: {x: 0.22320656, y: 0.276899, z: -0.006786062}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f02d5fe103ec24a976f15a99b36712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullets: {fileID: 0}
+  _isEnteredBulletArea: 0
   _bulletPerTime: 0.6
   dummyPrefab: {fileID: 5745514873473979139, guid: 7c6c0bb7ed20e504e83d7a04cb6f1d2d, type: 3}
   _bulletPrefab: {fileID: 2486586361950625209, guid: 53d69e38138f215478aadf63be78cea6, type: 3}

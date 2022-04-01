@@ -19,7 +19,7 @@ namespace AutoLayout3D //dikkat
         private int _bulletCount;
         private float _timer = Mathf.Infinity;
 
-        public bool _canShoot;
+        public bool CanShoot = true;
 
         #region Listeners
         private void OnEnable()
@@ -47,13 +47,14 @@ namespace AutoLayout3D //dikkat
 
         void SpawnBullets()
         {
-            
+
+        if (!CanShoot) return;
     
         if (!_isGameStarted) return;
 
             GameObject gO = PoolingSystem.Instance.InstantiateAPS("Bullet", bulletSpawnPos.position, bulletSpawnPos.rotation);
 
-            _canShoot = true;
+            
 
             //gO.transform.eulerAngles = new Vector3(0, -90, 0); //rotation Vector3 almiyor, eulerAngles yazilmali
 

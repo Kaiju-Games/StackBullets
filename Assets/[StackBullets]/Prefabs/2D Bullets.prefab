@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 900bb16434a573c4297d26a3918864fb, type: 2}
+  - {fileID: 2100000, guid: c438ceac3ead00545b0bfcff22f930a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f02d5fe103ec24a976f15a99b36712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullets: {fileID: 0}
   _isEnteredBulletArea: 0
   _bulletPerTime: 0.6
   dummyPrefab: {fileID: 5745514873473979139, guid: 7c6c0bb7ed20e504e83d7a04cb6f1d2d, type: 3}

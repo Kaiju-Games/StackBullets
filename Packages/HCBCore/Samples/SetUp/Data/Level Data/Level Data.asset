@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - LevelTypes: 
-    LoadLevelID: Test Level 01
+    LoadLevelID: Level 01
   - LevelTypes: 
-    LoadLevelID: 
+    LoadLevelID: Level 02

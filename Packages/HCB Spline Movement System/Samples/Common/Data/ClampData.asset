@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinRotateAngle: -30
   MaxRotateAngle: 30
-  MovementWidth: 4
+  MovementWidthWideRoad: 7
+  MovementWidthLittleRoad: 1.5
   RotateSpeed: 10
   RecoverySpeed: 15
   Sensitivity: 2.5

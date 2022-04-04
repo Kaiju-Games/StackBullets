@@ -23,6 +23,11 @@ namespace HCB.Core
         public static UnityEvent OnMovementStart = new UnityEvent();
         public static UnityEvent OnMovementStop = new UnityEvent();
 
+        public static UnityEvent OnWideRoad = new UnityEvent();
+        public static UnityEvent OnLittleRoad = new UnityEvent();
+
+
+
 
 
 

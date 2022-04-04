@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Lean.Touch;
 using Sirenix.OdinInspector;
+using HCB.Core;
 
 namespace HCB.SplineMovementSystem
 {
@@ -19,10 +20,10 @@ namespace HCB.SplineMovementSystem
 		public Transform RotateBody;
 
 		public Transform RotateWheels;
-		
+
 
 		#region Clamp Properties
-		public float MovementWidth { get { return ClampData.MovementWidth; } }
+		private float _movementWidth;
 		public float MinRotateAngle { get { return ClampData.MinRotateAngle; } }
 		public float MaxRotateAngle { get { return ClampData.MaxRotateAngle; } }
 		public float RotateSpeed { get { return ClampData.RotateSpeed; } }
@@ -59,10 +60,23 @@ namespace HCB.SplineMovementSystem
 
 		[HideInInspector]
 		[SerializeField]
-		private Vector3 remainingTranslation;	
+		private Vector3 remainingTranslation;
 
-		/// <summary>If you've set Use to ManuallyAddedFingers, then you can call this method to manually add a finger.</summary>
-		public void AddFinger(LeanFinger finger)
+
+        private void OnEnable()
+        {
+			EventManager.OnWideRoad.AddListener(() => SetWidth(ClampData.MovementWidthWideRoad));
+			EventManager.OnLittleRoad.AddListener(() => SetWidth(ClampData.MovementWidthLittleRoad));
+		}
+
+        private void OnDisable()
+        {
+			EventManager.OnWideRoad.RemoveListener(() => SetWidth(ClampData.MovementWidthWideRoad));
+			EventManager.OnLittleRoad.RemoveListener(() => SetWidth(ClampData.MovementWidthLittleRoad));
+		}
+
+        /// <summary>If you've set Use to ManuallyAddedFingers, then you can call this method to manually add a finger.</summary>
+        public void AddFinger(LeanFinger finger)
 		{
 			Use.AddFinger(finger);
 		}
@@ -89,6 +103,8 @@ namespace HCB.SplineMovementSystem
 		protected virtual void Awake()
 		{			
 			Use.UpdateRequiredSelectable(gameObject);
+
+			SetWidth(ClampData.MovementWidthWideRoad);
 		}
 
 		protected virtual void Update()
@@ -207,7 +223,7 @@ namespace HCB.SplineMovementSystem
 			Vector3 playerPos = transform.localPosition;
 
 			float xPosition = localPositon.x;
-			float xClamp = MovementWidth / 2f;
+			float xClamp = _movementWidth / 2f;
 
 			xPosition = Mathf.Clamp(xPosition, -xClamp, xClamp);
 
@@ -215,5 +231,11 @@ namespace HCB.SplineMovementSystem
 
 			return playerPos;
 		}
+
+		private void SetWidth(float width)
+        {
+			_movementWidth = width;
+
+        }
 	}
 }

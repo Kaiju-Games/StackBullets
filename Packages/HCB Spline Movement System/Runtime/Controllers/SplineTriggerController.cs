@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck.Splines;
+using HCB.Core;
 
 namespace HCB.SplineMovementSystem
 {
@@ -32,6 +33,16 @@ namespace HCB.SplineMovementSystem
                 return;
 
             splineCharacter.OnFinishTriggered();
-        }        
+        }  
+        
+        public void OnWideRoad()
+        {
+            EventManager.OnWideRoad.Invoke();
+        }
+
+        public void OnLittleRoad()
+        {
+            EventManager.OnLittleRoad.Invoke();
+        }
     }
 }

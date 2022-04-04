@@ -8,7 +8,8 @@ namespace HCB.SplineMovementSystem
     {
         public float MinRotateAngle = -30f;
         public float MaxRotateAngle = 30f;        
-        public float MovementWidth = 4f;
+        public float MovementWidthWideRoad = 5f;
+        public float MovementWidthLittleRoad = 4f;
         [Tooltip("The character rotation speed that when we move horizontal")]
         public float RotateSpeed = 10f;
         [Tooltip("The character rotation speed that when we stop moving horizontal and the character will try recover its orjinal rotation with this speed.")]

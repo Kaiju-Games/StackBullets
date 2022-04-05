@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd1b1e925c6874469e24eb666f9140f, type: 3}
   m_Name: ClampData
   m_EditorClassIdentifier: 
-  MinRotateAngle: -30
-  MaxRotateAngle: 30
+  MinRotateAngle: -15
+  MaxRotateAngle: 15
   MovementWidthWideRoad: 7
   MovementWidthLittleRoad: 1.5
   RotateSpeed: 10
   RecoverySpeed: 15
-  Sensitivity: 2.5
+  Sensitivity: 10

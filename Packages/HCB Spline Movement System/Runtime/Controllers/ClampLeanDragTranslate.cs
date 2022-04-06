@@ -235,7 +235,8 @@ namespace HCB.SplineMovementSystem
 		private void SetWidth(float width)
         {
 			_movementWidth = width;
+			transform.localPosition = Clamp(Camera.main.ScreenToWorldPoint(transform.localPosition));
 
-        }
+		}
 	}
 }

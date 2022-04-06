@@ -16,6 +16,6 @@ MonoBehaviour:
   MaxRotateAngle: 15
   MovementWidthWideRoad: 7
   MovementWidthLittleRoad: 1.5
-  RotateSpeed: 10
+  RotateSpeed: 3
   RecoverySpeed: 15
-  Sensitivity: 10
+  Sensitivity: -10

@@ -67,7 +67,7 @@ namespace AutoLayout3D //dikkat
 
                 _isEnteredBulletArea = true;
 
-                
+                HapticManager.Haptic(HapticTypes.SoftImpact);
 
                 //EventManager.OnMovementStop.Invoke();
 

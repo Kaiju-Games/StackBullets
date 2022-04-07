@@ -1,3 +1,4 @@
+using HCB.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class GateManager : MonoBehaviour
         
         if(bullets != null)
         {
+            HapticManager.Haptic(HapticTypes.RigidImpact);
             Debug.Log("Bam");
             GetComponentInChildren<ScoreManager>().RemovePoint();
         }

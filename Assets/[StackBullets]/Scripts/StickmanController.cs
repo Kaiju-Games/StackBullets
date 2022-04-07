@@ -24,6 +24,7 @@ public class StickmanController : MonoBehaviour
         SplineCharacter splineCharacter = other.GetComponentInParent<SplineCharacter>();
         if(splineCharacter != null)
         {
+            HapticManager.Haptic(HapticTypes.RigidImpact);
             Debug.Log("HitStickMan");
             DoRagdollForce(true,Vector3.forward + Vector3.up/2, 1200);
         }

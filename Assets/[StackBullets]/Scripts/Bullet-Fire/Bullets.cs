@@ -80,16 +80,6 @@ namespace AutoLayout3D //dikkat
             }
         }
 
-        //IEnumerator SpawnRate()
-        //{
-        //    while (_bulletCount > 0)
-        //    {
-        //        Debug.Log("bullet");
-        //        yield return new WaitForSecondsRealtime(_spawnRate);
-        //        SpawnBullets();
-        //    }
-        //}
-
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
